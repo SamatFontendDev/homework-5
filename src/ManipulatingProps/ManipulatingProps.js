@@ -41,11 +41,14 @@ export const withLoading = (WrappedComponent) => {
 
 
 export const addLoggedInUser = (WrappedComponent) => {
+  
   return class extends Component {
-    state = {
-      user: ''
-    }
-   
+      render() {
+        const user = getLoggedInUser();
+        return (
+          <WrappedComponent {...user} />
+        )
+      }
   }
 }
 

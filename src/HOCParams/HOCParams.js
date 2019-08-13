@@ -11,7 +11,7 @@ export const withGivenProps = (WrappedComponent, params) => {
     render() {
       this.props = {...this.props, params}
       return(
-        <WrappedComponent/>
+        <WrappedComponent {...this.props}/>
       )
     }
   }
